@@ -30,6 +30,24 @@ const Pizzas = () => {
     },
   ];
 
+  const juices = [
+    {
+      name: "Coca-cola",
+      url: "./coca.jpeg",
+      price: 3.5,
+    },
+    {
+      name: "Iced Tea",
+      url: "./ice-tea.jpeg",
+      price: 3.2,
+    },
+    {
+      name: "Eau Gazeuse",
+      url: "./water.jpeg",
+      price: 1.5,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-4 grid-rows-3 px-10 w-9/12  m-auto">
       {pizzas.map((pizza, index) => {
@@ -39,6 +57,16 @@ const Pizzas = () => {
             name={pizza.name}
             url={pizza.url}
             price={pizza.price}
+          />
+        );
+      })}
+      {juices.map((juice, index) => {
+        return (
+          <Card
+            key={index}
+            name={juice.name}
+            url={juice.url}
+            price={juice.price}
           />
         );
       })}
