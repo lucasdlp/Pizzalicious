@@ -1,14 +1,15 @@
 import Navbar from "../components/Navbar";
+import Pizzas from "../components/Pizzas";
 import { useAdminContext } from "../context/AdminContext";
 
 const home = () => {
   const { AdminMod } = useAdminContext();
 
   return (
-    <div>
+    <>
       <Navbar />
-      <p>{AdminMod && "Admin"}</p>
-    </div>
+      <Pizzas />
+    </>
   );
 };
 
