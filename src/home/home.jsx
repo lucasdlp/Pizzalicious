@@ -7,11 +7,12 @@ import { useAdminContext } from "../context/AdminContext";
 const home = () => {
   const { AdminMod } = useAdminContext();
   const [close, setClose] = useState(false);
+  const [searchFood, setSearchFood] = useState("");
 
   return (
     <div className="relative">
-      <Navbar close={close} setClose={setClose} />
-      <Pizzas />
+      <Navbar close={close} setClose={setClose} setSearchFood={setSearchFood} />
+      <Pizzas searchFood={searchFood} />
       <AdminPopUp close={close} setClose={setClose} />
     </div>
   );

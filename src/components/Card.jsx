@@ -14,6 +14,7 @@ const Card = ({ name, url, price }) => {
         <p className="text-gray-500">{price}€</p>
       </div>
       <AddToCart />
+      {/* <CircleX /> */}
     </div>
   );
 };

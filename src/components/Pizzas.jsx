@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Pizzas = () => {
+const Pizzas = ({ searchFood }) => {
   const pizzas = [
     {
       name: "Mozza Tomato",
@@ -50,26 +50,34 @@ const Pizzas = () => {
 
   return (
     <div className="grid grid-cols-4 grid-rows-3 px-10 w-9/12  m-auto">
-      {pizzas.map((pizza, index) => {
-        return (
-          <Card
-            key={index}
-            name={pizza.name}
-            url={pizza.url}
-            price={pizza.price}
-          />
-        );
-      })}
-      {juices.map((juice, index) => {
-        return (
-          <Card
-            key={index}
-            name={juice.name}
-            url={juice.url}
-            price={juice.price}
-          />
-        );
-      })}
+      {pizzas
+        .filter((pizza) =>
+          pizza.name.toLowerCase().includes(searchFood.toLowerCase())
+        )
+        .map((pizza, index) => {
+          return (
+            <Card
+              key={index}
+              name={pizza.name}
+              url={pizza.url}
+              price={pizza.price}
+            />
+          );
+        })}
+      {juices
+        .filter((juice) =>
+          juice.name.toLowerCase().includes(searchFood.toLowerCase())
+        )
+        .map((juice, index) => {
+          return (
+            <Card
+              key={index}
+              name={juice.name}
+              url={juice.url}
+              price={juice.price}
+            />
+          );
+        })}
     </div>
   );
 };
