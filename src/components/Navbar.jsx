@@ -1,10 +1,12 @@
 import { useAdminContext } from "../context/AdminContext";
+import SearchBar from "./SearchBar";
 
-const Navbar = () => {
+const Navbar = ({ setClose }) => {
   const { AdminMod, setAdminMod } = useAdminContext();
 
   const handleCheckbox = (e) => {
     setAdminMod(e.target.checked);
+    close ? setClose(false) : setClose(true);
   };
 
   return (
@@ -13,12 +15,7 @@ const Navbar = () => {
         <img className="w-20" src="./logo.svg" alt="logo" />
       </div>
       <div className="search-bar">
-        <input
-          className="bg-gray-100 py-2 px-8 rounded-md min-w-72 outline-none"
-          type="search"
-          placeholder="Rechercher"
-          autoComplete="none"
-        />
+        <SearchBar />
       </div>
       <div className="admin-bar border-2 border-gray-100 w-48 p-2 rounded flex items-center justify-between">
         <label

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAdminContext } from "../context/AdminContext";
-const AdminPopUp = () => {
+const AdminPopUp = ({ close, setClose }) => {
   const { AdminMod } = useAdminContext();
-  const [close, setClose] = useState(false);
 
   const handleClick = () => {
     setClose(true);
@@ -12,13 +11,13 @@ const AdminPopUp = () => {
     <div
       role="alert"
       className={
-        AdminMod
-          ? "block shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 ease-in-out duration-200"
-          : "shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 translate-x-[120%] opacity-0"
+        AdminMod && !close
+          ? "block shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 ease-in-out duration-300"
+          : "shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 translate-x-[120%] opacity-0 ease-in-out duration-300"
       }
     >
       <div className="flex items-start gap-4">
-        <span className="text-green-600">
+        <span className="text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
