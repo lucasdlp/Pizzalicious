@@ -1,5 +1,6 @@
 import { useAdminContext } from "../context/AdminContext";
 import SearchBar from "./SearchBar";
+import Cart from "./Cart";
 
 const Navbar = ({ setClose, setSearchFood }) => {
   const { AdminMod, setAdminMod } = useAdminContext();
@@ -14,8 +15,9 @@ const Navbar = ({ setClose, setSearchFood }) => {
       <div className="logo">
         <img className="w-20" src="./logo.svg" alt="logo" />
       </div>
-      <div className="search-bar">
+      <div className="search-bar flex items-center gap-4">
         <SearchBar setSearchFood={setSearchFood} />
+        <Cart />
       </div>
       <div className="admin-bar border-2 border-gray-100 w-48 p-2 rounded flex items-center justify-between">
         <label
