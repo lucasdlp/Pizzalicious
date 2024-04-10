@@ -1,6 +1,6 @@
 import React from "react";
 import { useAdminContext } from "../context/AdminContext";
-import AddToCart from "./AddToCart";
+import AddToCart from "./Cart/AddToCart";
 import DeleteCard from "./DeleteCard";
 
 const Card = ({ name, url, price }) => {

@@ -1,9 +1,11 @@
 import { ShoppingCart } from "lucide-react";
 import React from "react";
+import { useCart } from "../../context/CartOpened";
 
 const Cart = () => {
+  const { cartOpened, setCartOpened } = useCart();
   const handleClick = () => {
-    console.log("ok");
+    cartOpened ? setCartOpened(false) : setCartOpened(true);
   };
 
   return (

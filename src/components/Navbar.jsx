@@ -1,6 +1,6 @@
 import { useAdminContext } from "../context/AdminContext";
+import Cart from "./Cart/Cart";
 import SearchBar from "./SearchBar";
-import Cart from "./Cart";
 
 const Navbar = ({ setClose, setSearchFood }) => {
   const { AdminMod, setAdminMod } = useAdminContext();
