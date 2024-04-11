@@ -1,4 +1,5 @@
 import React from "react";
+import { useCart } from "../context/CartOpened";
 import Card from "./Card";
 
 const Pizzas = ({ searchFood }) => {
@@ -48,8 +49,14 @@ const Pizzas = ({ searchFood }) => {
     },
   ];
 
+  const { cartOpened } = useCart();
+
   return (
-    <div className="grid grid-cols-4 grid-rows-3 px-10 w-9/12  m-auto">
+    <div
+      className={`grid grid-cols-4 grid-rows-3 px-10 w-9/12  m-auto transition-transform duration-100 ease-linear ${
+        cartOpened ? " translate-x-[-12%]" : ""
+      }`}
+    >
       {pizzas
         .filter((pizza) =>
           pizza.name.toLowerCase().includes(searchFood.toLowerCase())

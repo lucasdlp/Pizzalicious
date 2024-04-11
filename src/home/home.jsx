@@ -13,11 +13,13 @@ const home = () => {
   const [searchFood, setSearchFood] = useState("");
 
   return (
-    <div className="relative">
+    <div className="relative w-full h-full">
       <Navbar close={close} setClose={setClose} setSearchFood={setSearchFood} />
+
       <Pizzas searchFood={searchFood} />
+      <CartContainer />
+
       <AdminPopUp close={close} setClose={setClose} />
-      {cartOpened && <CartContainer />}
     </div>
   );
 };
