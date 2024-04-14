@@ -12,8 +12,8 @@ const AdminPopUp = ({ close, setClose }) => {
       role="alert"
       className={
         AdminMod && !close
-          ? "block shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 ease-in-out duration-300"
-          : "shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 translate-x-[120%] opacity-0 ease-in-out duration-300"
+          ? "block shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 ease-in-out duration-300 z-50"
+          : "shadow-md rounded-xl border border-gray-100 bg-white p-4 w-2/6 fixed bottom-6 right-2 translate-x-[120%] opacity-0 ease-in-out duration-300 z-[-1]"
       }
     >
       <div className="flex items-start gap-4">

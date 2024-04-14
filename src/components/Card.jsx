@@ -6,8 +6,17 @@ import DeleteCard from "./DeleteCard";
 const Card = ({ name, url, price }) => {
   const { AdminMod } = useAdminContext();
 
+  let itemsAdd = 0;
+  const handleClick = () => {
+    itemsAdd++;
+    console.log(itemsAdd);
+  };
+
   return (
-    <div className="card cursor-pointer w-56 h-80 bg-white border-[1px] border-gray-200 mb-6 rounded-xl active:scale-[0.98] ease-out duration-150 relative ">
+    <div
+      className="card cursor-pointer w-56 h-80 bg-white border-[1px] border-gray-200 mb-6 rounded-xl active:scale-[0.98] ease-out duration-150 relative z-20"
+      onClick={handleClick}
+    >
       <img
         src={url}
         alt={name}

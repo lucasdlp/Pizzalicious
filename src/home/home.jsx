@@ -4,7 +4,7 @@ import CartContainer from "../components/Cart/CartContainer";
 import Navbar from "../components/Navbar";
 import Pizzas from "../components/Pizzas";
 import { useAdminContext } from "../context/AdminContext";
-import { useCart } from "../context/CartOpened";
+import { useCart } from "../context/CartContext";
 
 const home = () => {
   const { AdminMod } = useAdminContext();
