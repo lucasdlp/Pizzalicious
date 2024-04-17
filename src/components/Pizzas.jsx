@@ -29,6 +29,21 @@ export const Pizzas = ({ searchFood }) => {
       url: "./hotPizza.jpeg",
       price: 13.99,
     },
+    {
+      name: "Pizza Calzone",
+      url: "./calzone.jpeg",
+      price: 12.99,
+    },
+    {
+      name: "Pizza Chèvre-miel",
+      url: "./pizza-chevre-miel.jpeg",
+      price: 15.99,
+    },
+    {
+      name: "Pizza Margherita",
+      url: "./pizza-margherita.jpeg",
+      price: 11.99,
+    },
   ];
 
   const juices = [
@@ -46,6 +61,11 @@ export const Pizzas = ({ searchFood }) => {
       name: "Eau Gazeuse",
       url: "./water.jpeg",
       price: 1.5,
+    },
+    {
+      name: "Jus d'orange",
+      url: "./jus-orange.jpeg",
+      price: 2.5,
     },
   ];
 
