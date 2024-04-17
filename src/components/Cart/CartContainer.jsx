@@ -1,9 +1,10 @@
-import { X } from "lucide-react";
+import { ShoppingCart, X } from "lucide-react";
 import React from "react";
 import { useCart } from "../../context/CartContext";
+import CartItem from "./CartItem";
 
 const CartContainer = () => {
-  const { cartOpened, setCartOpened } = useCart();
+  const { cartOpened, setCartOpened, cartItems } = useCart();
 
   const handleClick = () => {
     setCartOpened(false);
@@ -26,6 +27,16 @@ const CartContainer = () => {
         <p className="font-bold text-lg">Total : 20€</p>
         <div className="w-7"></div>
       </div>
+      {cartItems.length > 0 ? (
+        cartItems.map((item, index) => {
+          return <CartItem key={index} name={item.name} price={item.price} />;
+        })
+      ) : (
+        <div className="flex flex-col justify-center items-center mt-28">
+          <ShoppingCart color="#c3c4c5" size={100} strokeWidth={3} />
+          <p className="text-[#c3c4c5]">Le panier est vide !</p>
+        </div>
+      )}
     </div>
   );
 };

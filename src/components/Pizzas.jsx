@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 import Card from "./Card";
 
-const Pizzas = ({ searchFood }) => {
+export const Pizzas = ({ searchFood }) => {
   const pizzas = [
     {
       name: "Mozza Tomato",

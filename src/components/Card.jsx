@@ -1,21 +1,21 @@
 import React from "react";
 import { useAdminContext } from "../context/AdminContext";
+import { useCart } from "../context/CartContext";
 import AddToCart from "./Cart/AddToCart";
 import DeleteCard from "./DeleteCard";
 
 const Card = ({ name, url, price }) => {
   const { AdminMod } = useAdminContext();
+  const { addToCart } = useCart();
 
-  let itemsAdd = 0;
-  const handleClick = () => {
-    itemsAdd++;
-    console.log(itemsAdd);
+  const handleAddToCart = () => {
+    addToCart({ name, price, url });
   };
 
   return (
     <div
       className="card cursor-pointer w-56 h-80 bg-white border-[1px] border-gray-200 mb-6 rounded-xl active:scale-[0.98] ease-out duration-150 relative z-20"
-      onClick={handleClick}
+      onClick={handleAddToCart}
     >
       <img
         src={url}
