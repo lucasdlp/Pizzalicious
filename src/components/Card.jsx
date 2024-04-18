@@ -4,12 +4,12 @@ import { useCart } from "../context/CartContext";
 import AddToCart from "./Cart/AddToCart";
 import DeleteCard from "./DeleteCard";
 
-const Card = ({ name, url, price }) => {
+const Card = ({ name, url, price, deleted }) => {
   const { AdminMod } = useAdminContext();
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart({ name, price, url });
+    addToCart({ name, price, url, deleted });
   };
 
   return (

@@ -1,4 +1,4 @@
-import { React, createContext, useContext, useEffect, useState } from "react";
+import { React, createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
@@ -11,13 +11,21 @@ export const CartProvider = ({ children }) => {
     setCartItems([...cartItems, item]);
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+  const deleteItem = (item) => {
+    item.deleted = true;
+    console.log(item);
+  };
 
   return (
     <CartContext.Provider
-      value={{ cartOpened, setCartOpened, addToCart, setCartItems, cartItems }}
+      value={{
+        cartOpened,
+        setCartOpened,
+        addToCart,
+        setCartItems,
+        cartItems,
+        deleteItem,
+      }}
     >
       {children}
     </CartContext.Provider>
