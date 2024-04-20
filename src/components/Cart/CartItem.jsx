@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../../context/CartContext";
 import Trash from "./Trash";
 
-const CartItem = ({ name, price, deleted }) => {
+const CartItem = ({ name, price }) => {
   const { cartItem } = useCart();
 
   return (
@@ -12,7 +12,7 @@ const CartItem = ({ name, price, deleted }) => {
         <p className="text-sm select-none text-gray-500">{price}€</p>
       </div>
 
-      <Trash deleted={deleted} />
+      <Trash />
     </div>
   );
 };

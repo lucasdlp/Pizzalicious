@@ -13,7 +13,7 @@ const home = () => {
   const [searchFood, setSearchFood] = useState("");
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full flex flex-col justify-center items-center">
       <Navbar close={close} setClose={setClose} setSearchFood={setSearchFood} />
 
       <Pizzas searchFood={searchFood} />

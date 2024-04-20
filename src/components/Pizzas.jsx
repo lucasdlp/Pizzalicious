@@ -85,7 +85,7 @@ export const Pizzas = ({ searchFood }) => {
 
   return (
     <div
-      className={`grid grid-cols-4 grid-rows-3 px-10 w-9/12  m-auto transition-transform duration-100 ease-linear ${
+      className={`cards-container grid grid-cols-5 grid-rows-3 px-10 w-9/12 transition-transform duration-100 ease-linear ${
         cartOpened ? " translate-x-[-12%]" : ""
       }`}
     >

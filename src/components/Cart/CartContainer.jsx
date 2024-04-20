@@ -28,20 +28,17 @@ const CartContainer = () => {
         <div className="w-7"></div>
       </div>
       {cartItems.length > 0 ? (
-        cartItems
-          .filter((item) => item.deleted === false)
-          .map((item, index) => {
-            console.log(item);
-            return (
-              <CartItem
-                key={index}
-                name={item.name}
-                price={item.price}
-                url={item.url}
-                deleted={item.deleted}
-              />
-            );
-          })
+        cartItems.map((item, index) => {
+          return (
+            <CartItem
+              key={index}
+              name={item.name}
+              price={item.price}
+              url={item.url}
+              deleted={item.deleted}
+            />
+          );
+        })
       ) : (
         <div className="flex flex-col justify-center items-center mt-28">
           <ShoppingCart color="#c3c4c5" size={100} strokeWidth={3} />

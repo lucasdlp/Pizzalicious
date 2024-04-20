@@ -11,15 +11,15 @@ const Navbar = ({ setClose, setSearchFood }) => {
   };
 
   return (
-    <nav className="w-full bg-white h-[13vh] flex items-center justify-between px-10 select-none mb-12 ">
+    <nav className="w-full bg-white h-[13vh] flex items-center justify-between px-10 select-none mb-12 max-[950px]:justify-center ">
       <div className="logo">
         <img className="w-20" src="./logo.svg" alt="logo" />
       </div>
-      <div className="search-bar flex items-center gap-4">
+      <div className="search-bar flex items-center gap-4 max-[950px]:hidden ">
         <SearchBar setSearchFood={setSearchFood} />
         <Cart />
       </div>
-      <div className="admin-bar border-2 border-gray-100 w-48 p-2 rounded flex items-center justify-between">
+      <div className="admin-bar border-2 border-gray-100 w-48 p-2 rounded flex items-center justify-between max-[950px]:hidden">
         <label
           htmlFor="check-admin"
           className=" w-full cursor-pointer flex items-center justify-between"

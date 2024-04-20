@@ -4,17 +4,13 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartOpened, setCartOpened] = useState(false);
-
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
 
-  const deleteItem = (item) => {
-    item.deleted = true;
-    console.log(item);
-  };
+  const deleteItem = (index) => {};
 
   return (
     <CartContext.Provider
